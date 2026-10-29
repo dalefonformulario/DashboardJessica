@@ -93,10 +93,13 @@
     };
 
     function App() {
+      // === CONFIGURACIÓN ÚNICA POR EJECUTIVO ===
+  const ID_DASHBOARD = "jessica"; 
+  // =========================================
       const [isDarkMode, setIsDarkMode] = useState(false);
       
       // Estados de Seguridad
-      const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem('dalefon_auth') === 'true');
+      const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem(`dalefon_auth_${ID_DASHBOARD}`) === 'true');
       const [email, setEmail] = useState('');
       const [password, setPassword] = useState('');
       const [loginError, setLoginError] = useState(false);
